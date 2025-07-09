@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Proceso - Creación de Usuario en Active Directory</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+    <header class="pwc-header">
+        <div class="logos-container">
+            <div class="pwc-logo">
+                <img src="https://www.pwc.com/ia/es/publicaciones/Imagenes-Prensa/Press-Release-Logo.jpg" alt="PwC Logo" />
+            </div>
+            <div class="logo-separator">por</div>
+            <div class="vanti-logo">
+                <img src="https://images.ctfassets.net/3brzg7q3bvg1/5qkqIbzB1VpZ1DapXhIMho/30e84d821498ebe49b89e1f32597e7c1/vanti-logo-og.png" alt="Vanti Logo" />
+            </div>
+        </div>
+        <h1>Manual de Proceso: Creación de Usuario en Active Directory</h1>
+        <div class="subtitle">Grupo Vanti</div>
+        
+        <!-- Navegación rápida -->
+        <div class="quick-nav">
+            <a href="#video-section" class="nav-btn">📺 Video</a>
+            <a href="#process-steps" class="nav-btn">📋 Proceso</a>
+            <a href="#metrics-section" class="nav-btn">📊 Métricas</a>
+        </div>
+    </header>
+    
+    <main class="pwc-main">
+        <section class="video-section" id="video-section">
+            <h2>🎥 Video Tutorial del Proceso</h2>
+            <p>Mira el video explicativo completo del proceso de creación de usuarios en Active Directory:</p>
+            
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <div class="video-icon">▶️</div>
+                    <h3>Video Tutorial: Creación de Usuarios en AD</h3>
+                    <p>Próximamente disponible</p>
+                    <div class="video-info">
+                        <span>⏱️ Duración estimada: 15 minutos</span>
+                        <span>📋 Incluye: Demostración paso a paso</span>
+                    </div>
+                </div>
+                
+                <!-- Para cuando tengas el video, descomenta y reemplaza la URL -->
+                <!--
+                <iframe 
+                    width="100%" 
+                    height="400" 
+                    src="URL_DEL_VIDEO_AQUI" 
+                    title="Tutorial Creación de Usuarios AD"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                -->
+            </div>
+            
+            <div class="video-tips">
+                <h4>💡 Contenido del video:</h4>
+                <ul>
+                    <li>Navegación en HIT ServiceNow</li>
+                    <li>Validación en VantiAliados</li>
+                    <li>Llenado correcto del CSV</li>
+                    <li>Ejecución del script PowerShell</li>
+                    <li>Verificación en Active Directory</li>
+                    <li>Resolución de errores comunes</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="process-step" id="process-steps">
+            <h2><span class="step-number">1</span>Recepción de la solicitud</h2>
+            <p>La solicitud llega a través de la plataforma de gestión de requerimientos:</p>
+            <ul>
+                <li>🔗 <a href="https://hit.service-now.com/now" target="_blank">HIT - ServiceNow</a></li>
+                <li>El analista de accesos revisa el REQ y su documentación adjunta, incluyendo el archivo CSV con los campos requeridos.</li>
+            </ul>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">2</span>Validación en VantiAliados y Active Directory</h2>
+            <p>Se realizan dos validaciones críticas antes de proceder con la creación:</p>
+            
+            <h3>🔍 Validación en VantiAliados</h3>
+            <ul>
+                <li>🔗 <a href="https://aliados.grupovanti.com/auth/validator-login" target="_blank">VantiAliados - Validación</a></li>
+                <li>Se verifica que el usuario esté registrado correctamente en el sistema de aliados.</li>
+            </ul>
+            
+            <h3>🚫 Verificación en Active Directory</h3>
+            <div class="warning-box">
+                <strong>⚠️ CRÍTICO:</strong> Se debe verificar que el usuario <strong>NO tenga cuenta existente</strong> en Active Directory antes de proceder con la creación.
+            </div>
+            <ul>
+                <li>Buscar por <code>samAccountName</code> (nombre de usuario)</li>
+                <li>Buscar por <code>employeeID</code> (número de empleado)</li>
+                <li>Buscar por <code>mail</code> (correo electrónico)</li>
+                <li>Si existe alguna cuenta con estos datos, <strong>NO proceder</strong> y contactar al solicitante</li>
+            </ul>
+            
+            <div class="info-box">
+                <strong>✅ Continuación del proceso:</strong> Solo si el usuario está registrado en VantiAliados Y NO existe en Active Directory, se continúa con el paso 3.
+            </div>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">3</span>Verificación de campos en el archivo CSV</h2>
+            <p>Se verifica que el archivo contenga todos los campos requeridos:</p>
+            <div class="code-block">
+                <pre>samAccountName, GivenName, Surname, employeeID, password, title, department, office, manager, description,
+company, OUCreacion, OUFinal, mail, street, employeeType, fechaExpiracion, Requerimiento, Tarea, TipoDeSolicitud, funcion</pre>
+            </div>
+            
+            <div class="download-section">
+                <h3>📥 Descargar Template CSV</h3>
+                <p>Descarga el archivo template con la estructura correcta para crear usuarios:</p>
+                <a href="template_AD_ALTAS.csv" download="template_AD_ALTAS.csv" class="download-btn">
+                    📄 Descargar Template CSV
+                </a>
+                <p class="template-note">Este archivo contiene un ejemplo con todos los campos requeridos y el formato correcto.</p>
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ Importante:</strong> 
+                <ul>
+                    <li>Según el valor de <code>funcion</code> (<code>USU910</code>, <code>USU0008</code>, <code>USU900</code>), se valida si campos como <code>employeeType</code> o <code>fechaExpiracion</code> son obligatorios.</li>
+                    <li>Se eliminan caracteres especiales de los nombres y campos de texto.</li>
+                    <li>Se eliminan tildes (á, é, í, ó, ú → a, e, i, o, u).</li>
+                    <li>Se cambia la Ñ por N en todos los campos de texto.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">3.1</span>Asignación automática de licencias Office 365 E1 PLUS</h2>
+            <p>Para usuarios temporales y plantilla se asigna automáticamente la licencia Office 365 E1 PLUS:</p>
+            
+            <div class="validation-flow">
+                <div class="validation-step">
+                    <h3>🔍 Identificación del tipo de usuario</h3>
+                    <p>Se verifica el valor del campo <code>employeeType</code> para determinar si es:</p>
+                    <ul>
+                        <li><code>Temporal</code> - Usuario con contrato temporal</li>
+                        <li><code>Plantilla</code> - Usuario de plantilla permanente</li>
+                    </ul>
+                </div>
+                
+                <div class="office-license-box">
+                    <h3>📧 Asignación automática de Office 365 E1 PLUS</h3>
+                    <p><strong>Condición:</strong> Si <code>employeeType = "Temporal"</code> OR <code>employeeType = "Plantilla"</code></p>
+                    <p><strong>Proceso automático:</strong> Se asigna inmediatamente:</p>
+                    <ul>
+                        <li>✅ <strong>Licencia Office 365 E1 PLUS</strong> - Asignación automática</li>
+                        <li>✅ <strong>Correo electrónico corporativo</strong> (campo <code>mail</code>) - Habilitado</li>
+                        <li>✅ <strong>Buzón de correo Exchange Online</strong> - Configurado automáticamente</li>
+                        <li>✅ <strong>Microsoft Teams</strong> - Acceso habilitado</li>
+                        <li>✅ <strong>SharePoint Online</strong> - Acceso configurado</li>
+                    </ul>
+                </div>
+                
+                <div class="info-box">
+                    <strong>🎯 Justificación:</strong>
+                    <p>Los usuarios temporales y de plantilla requieren acceso completo a herramientas de comunicación y colaboración desde el primer día para garantizar su productividad e integración en el ecosistema digital de Vanti.</p>
+                </div>
+                
+                <div class="warning-box">
+                    <strong>⚠️ Proceso automatizado:</strong>
+                    <ul>
+                        <li>Se verifica que el campo <code>mail</code> esté correctamente formateado</li>
+                        <li>Se valida disponibilidad de licencias Office 365 E1 PLUS en el tenant</li>
+                        <li>Se asigna automáticamente sin intervención manual</li>
+                        <li>Para usuarios temporales, se sincroniza la fecha de expiración con la licencia</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">3.2</span>Asignación de grupos por defecto según tipo de usuario</h2>
+            <p>Según el valor del campo <code>employeeType</code>, se asignan automáticamente los siguientes grupos de Active Directory:</p>
+            
+            <div class="groups-assignment">
+                <div class="group-type-card plantilla">
+                    <div class="group-type-header">
+                        <h3>👥 Usuarios Plantilla</h3>
+                        <span class="employee-type-badge">employeeType: "Plantilla"</span>
+                    </div>
+                    <div class="group-list">
+                        <div class="group-item">
+                            <span class="group-code">GUSAIN_S0C0M0D0</span>
+                            <span class="group-description">Grupo base de usuarios internos</span>
+                        </div>
+                        <div class="group-item">
+                            <span class="group-code">NPS_Usuarios_Plantilla</span>
+                            <span class="group-description">Acceso a sistemas NPS para plantilla</span>
+                        </div>
+                        <div class="group-item">
+                            <span class="group-code">Vanti_Plantilla</span>
+                            <span class="group-description">Permisos corporativos de plantilla</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group-type-card contratista">
+                    <div class="group-type-header">
+                        <h3>🔧 Usuarios Contratista</h3>
+                        <span class="employee-type-badge">employeeType: "Contratista"</span>
+                    </div>
+                    <div class="group-list">
+                        <div class="group-item">
+                            <span class="group-code">GUSAIN_S0C0M0D0</span>
+                            <span class="group-description">Grupo base de usuarios internos</span>
+                        </div>
+                        <div class="group-item">
+                            <span class="group-code">GUSAO365_RESETPSW_E</span>
+                            <span class="group-description">Permisos para reset de contraseña Office 365</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group-type-card temporal">
+                    <div class="group-type-header">
+                        <h3>⏰ Usuarios Temporales</h3>
+                        <span class="employee-type-badge">employeeType: "Temporal"</span>
+                    </div>
+                    <div class="group-list">
+                        <div class="group-item">
+                            <span class="group-code">GUSAIN_S0C0M0D0</span>
+                            <span class="group-description">Grupo base de usuarios internos</span>
+                        </div>
+                        <div class="group-item">
+                            <span class="group-code">NPS_Usuarios_Temporal</span>
+                            <span class="group-description">Acceso a sistemas NPS para temporales</span>
+                        </div>
+                        <div class="group-item">
+                            <span class="group-code">Vanti_Temporal</span>
+                            <span class="group-description">Permisos corporativos temporales</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <strong>📋 Proceso de asignación:</strong>
+                <ul>
+                    <li>Los grupos se asignan automáticamente durante la creación del usuario</li>
+                    <li>La asignación es <strong>obligatoria</strong> y no puede ser omitida</li>
+                    <li>Se verifica que cada grupo exista en Active Directory antes de la asignación</li>
+                    <li>Se registra en el log cualquier error en la asignación de grupos</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ Consideraciones importantes:</strong>
+                <ul>
+                    <li>El grupo <code>GUSAIN_S0C0M0D0</code> es común para todos los tipos de usuario</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">4</span>Ejecución del script de creación</h2>
+            <p>Se ejecuta el <strong>script PowerShell</strong> que procesa cada línea del archivo CSV y crea el usuario en Active Directory:</p>
+            <ul>
+                <li>Crea la cuenta en la <strong>OU de creación</strong> (<code>OUCreacion</code>)</li>
+                <li>Asigna atributos como:
+                    <ul>
+                        <li>Nombre, correo, contraseña, título, departamento</li>
+                        <li>Manager (<code>manager</code>)</li>
+                        <li>Grupos y tipo de empleado (<code>employeeType</code>)</li>
+                    </ul>
+                </li>
+                <li>Asigna el correo (<code>mail</code>) y alias (<code>proxyAddresses</code>) si corresponde</li>
+                <li>Define la fecha de expiración si es usuario temporal (<code>USU910</code>)</li>
+            </ul>
+            
+            <div class="office-license-box">
+                <h3>📧 Asignación automática de licencias Office 365 E1 PLUS</h3>
+                <p><strong>Para usuarios temporales y de plantilla:</strong></p>
+                <ul>
+                    <li>✅ Se asigna automáticamente <strong>licencia Office 365 E1 PLUS</strong></li>
+                    <li>✅ Se habilita automáticamente el <strong>buzón de correo en Exchange Online</strong></li>
+                    <li>✅ Se configura acceso completo a <strong>Microsoft Teams</strong></li>
+                    <li>✅ Se habilita acceso a <strong>SharePoint Online</strong> y <strong>OneDrive for Business</strong></li>
+                    <li>✅ Se sincroniza la fecha de expiración de la licencia para usuarios temporales</li>
+                </ul>
+                <p><strong>Nota técnica:</strong> La asignación se realiza automáticamente mediante comandos PowerShell conectados a <code>Microsoft Graph</code> y <code>Exchange Online</code>.</p>
+            </div>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">5</span>Notas en el campo info del usuario AD</h2>
+            <p>Se agrega un bloque con información estructurada al campo <code>info</code> de la cuenta en AD para <strong>mantener la trazabilidad completa</strong> del requerimiento y tarea donde se solicitó la creación del usuario:</p>
+            <div class="code-block">
+                <pre>--------------------------------------------------------------------------------------------------------------
+REQ: REQXXXXXX - TASK: TASKXXXX - TIPO: Alta
+FECHA DE CREACIÓN: DD/MM/AAAA</pre>
+            </div>
+            
+            <div class="info-box">
+                <strong>🎯 Propósito de la trazabilidad:</strong>
+                <ul>
+                    <li><strong>Auditoría:</strong> Permite identificar quién y cuándo solicitó la creación del usuario</li>
+                    <li><strong>Seguimiento:</strong> Facilita la búsqueda del requerimiento original en HIT ServiceNow</li>
+                    <li><strong>Control:</strong> Mantiene el historial completo de todas las operaciones realizadas en la cuenta</li>
+                    <li><strong>Compliance:</strong> Cumple con los requisitos de documentación y trazabilidad corporativa</li>
+                </ul>
+            </div>
+            
+            <div class="info-box">
+                <strong>✅ Nota técnica:</strong> Si el usuario ya tiene notas previas, se conserva lo anterior y se agrega el nuevo bloque al final, separado por doble salto de línea para mantener todo el historial.
+            </div>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">6</span>Movimiento a la OU final</h2>
+            <p>Una vez creado, el usuario es movido a su <strong>OU final de operación</strong> (<code>OUFinal</code>) indicada en el CSV.</p>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">7</span>Registro y reporte</h2>
+            <p>Se genera un reporte de salida en archivo <code>.txt</code> o <code>.csv</code>, que contiene:</p>
+            <ul>
+                <li>Nombre de usuario</li>
+                <li>Resultado de la operación (éxito o error)</li>
+                <li>Fecha de creación</li>
+                <li>Grupos asignados</li>
+                <li>Estado de licencia Office 365 E1 PLUS (para usuarios temporales y plantilla)</li>
+                <li>Estado del buzón de correo Exchange Online</li>
+                <li>Observaciones</li>
+            </ul>
+            
+            <div class="info-box">
+                <strong>📋 Información adicional en el reporte:</strong>
+                <ul>
+                    <li><strong>Tipo de usuario:</strong> Plantilla, Temporal o Contratista</li>
+                    <li><strong>Estado en AD:</strong> Usuario creado correctamente en Active Directory</li>
+                    <li><strong>Grupos asignados:</strong> Lista de grupos de AD asignados automáticamente</li>
+                    <li><strong>Licencia Office 365 E1 PLUS:</strong> Estado de asignación para usuarios temporales y plantilla</li>
+                    <li><strong>Servicios habilitados:</strong> Exchange Online, Teams, SharePoint, OneDrive</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">8</span>Cierre de la solicitud</h2>
+            <p>Se documenta el cierre del requerimiento en HIT, adjuntando el log de ejecución y confirmando la creación exitosa del usuario.</p>
+        </section>
+        
+        <section class="metrics-section" id="metrics-section">
+            <h2>📊 Beneficios del Nuevo Flujo de Trabajo</h2>
+            
+            <div class="metrics-container">
+                <div class="metric-card primary">
+                    <div class="metric-icon">🚀</div>
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Aumento en Productividad</div>
+                    <div class="metric-description">Gracias a la automatización del proceso</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">⏱️</div>
+                    <div class="metric-value">85%</div>
+                    <div class="metric-label">Reducción de Tiempo</div>
+                    <div class="metric-description">De proceso manual a automatizado</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">✅</div>
+                    <div class="metric-value">99%</div>
+                    <div class="metric-label">Precisión en Datos</div>
+                    <div class="metric-description">Eliminación de errores manuales</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">🔄</div>
+                    <div class="metric-value">500+</div>
+                    <div class="metric-label">Usuarios por Lote</div>
+                    <div class="metric-description">Procesamiento masivo simultáneo</div>
+                </div>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>🎯 Automatización Completa</h4>
+                    <p>El script de PowerShell automatiza todo el proceso de creación, desde la validación hasta la asignación de grupos y OUs.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4>📋 Procesamiento Masivo</h4>
+                    <p>Capacidad de crear múltiples usuarios simultáneamente mediante archivos CSV, eliminando la creación uno por uno.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4>🔍 Validación Integrada</h4>
+                    <p>Verificación automática en VantiAliados y validaciones de datos para evitar errores en la creación.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4>📈 Trazabilidad Completa</h4>
+                    <p>Registro detallado de cada operación con logs automáticos y seguimiento en el campo 'info' de AD.</p>
+                </div>
+            </div>
+            
+            <div class="comparison-section">
+                <h3>⚡ Comparación: Antes vs. Después</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-item before">
+                        <h4>❌ Proceso Manual (Antes)</h4>
+                        <ul>
+                            <li>30 minutos por usuario</li>
+                            <li>Creación individual en ADUC</li>
+                            <li>Errores frecuentes de tipeo</li>
+                            <li>Validaciones manuales</li>
+                            <li>Sin trazabilidad estándar</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-item after">
+                        <h4>✅ Proceso Automatizado (Ahora)</h4>
+                        <ul>
+                            <li>2-3 minutos por usuario</li>
+                            <li>Creación masiva por lotes</li>
+                            <li>Eliminación de errores humanos</li>
+                            <li>Validaciones automáticas</li>
+                            <li>Trazabilidad completa y estándar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pwc-footer">
+        <p>Manual de Proceso - Grupo Vanti | Gestión de Identidades y Accesos</p>
+        <p>Fecha de actualización: 07 de Julio de 2025</p>
+        <p class="developer-credit">Desarrollado por Cristhian G. Rodriguez Parra</p>
+    </footer>
+    
+    <!-- Sidebar Global para Navegación de Manuales -->
+    <div id="globalSidebar" class="global-sidebar">
+        <div class="sidebar-header">
+            <h3>📚 Manuales de Proceso</h3>
+            <button id="closeSidebar" class="close-btn">&times;</button>
+        </div>
+        
+        <div class="sidebar-content">
+            <!-- Sección actual -->
+            <div class="sidebar-section current-section">
+                <h4>📋 Manual Actual</h4>
+                <div class="manual-item active">
+                    <span class="manual-icon">🆔</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Creación de Usuario en AD</div>
+                        <div class="manual-subtitle">Active Directory</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Manuales disponibles -->
+            <div class="sidebar-section">
+                <h4>🔧 Manuales de TI</h4>
+                <div class="manual-item" data-manual="user-creation">
+                    <span class="manual-icon">🆔</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Creación de Usuario en AD</div>
+                        <div class="manual-subtitle">Active Directory</div>
+                    </div>
+                </div>
+                
+                <div class="manual-item disabled" data-manual="user-modification">
+                    <span class="manual-icon">✏️</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Modificación de Usuario</div>
+                        <div class="manual-subtitle">Próximamente</div>
+                    </div>
+                </div>
+                
+                <div class="manual-item disabled" data-manual="user-deletion">
+                    <span class="manual-icon">🗑️</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Eliminación de Usuario</div>
+                        <div class="manual-subtitle">Próximamente</div>
+                    </div>
+                </div>
+                
+                <div class="manual-item" data-manual="group-management" data-url="group-management.html">
+                    <span class="manual-icon">👥</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Gestión de Grupos</div>
+                        <div class="manual-subtitle">Active Directory</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Manuales de Accesos -->
+            <div class="sidebar-section">
+                <h4>🔐 Gestión de Accesos</h4>
+                <div class="manual-item disabled" data-manual="access-request">
+                    <span class="manual-icon">📝</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Solicitud de Accesos</div>
+                        <div class="manual-subtitle">Próximamente</div>
+                    </div>
+                </div>
+                
+                <div class="manual-item disabled" data-manual="access-revocation">
+                    <span class="manual-icon">🚫</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Revocación de Accesos</div>
+                        <div class="manual-subtitle">Próximamente</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Manuales de Seguridad -->
+            <div class="sidebar-section">
+                <h4>🛡️ Seguridad</h4>
+                <div class="manual-item disabled" data-manual="password-reset">
+                    <span class="manual-icon">🔑</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Reseteo de Contraseñas</div>
+                        <div class="manual-subtitle">Próximamente</div>
+                    </div>
+                </div>
+                
+                <div class="manual-item disabled" data-manual="security-audit">
+                    <span class="manual-icon">🔍</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Auditoría de Seguridad</div>
+                        <div class="manual-subtitle">Próximamente</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sidebar-footer">
+            <div class="footer-info">
+                <small>Grupo Vanti - Gestión de Identidades</small>
+                <small>Versión 1.0 | Julio 2025</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón para abrir el sidebar -->
+    <button id="openSidebar" class="sidebar-toggle-btn" onclick="console.log('Click detectado!'); if(window.globalSidebar) window.globalSidebar.open(); else console.error('globalSidebar no encontrado');">
+        <span class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <span class="toggle-text">Manuales</span>
+    </button>
+
+    <!-- Overlay para cerrar el sidebar -->
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+    
+    <script src="script.js"></script>
+    <script src="sidebar.js"></script>
+</body>
+</html>

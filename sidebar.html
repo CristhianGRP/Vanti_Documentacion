@@ -1,0 +1,117 @@
+<!-- Sidebar Global para Navegación de Manuales -->
+<div id="globalSidebar" class="global-sidebar">
+    <div class="sidebar-header">
+        <h3>📚 Manuales de Proceso</h3>
+        <button id="closeSidebar" class="close-btn">&times;</button>
+    </div>
+    
+    <div class="sidebar-content">
+        <!-- Sección actual -->
+        <div class="sidebar-section current-section">
+            <h4>📋 Manual Actual</h4>
+            <div class="manual-item active">
+                <span class="manual-icon">🆔</span>
+                <div class="manual-info">
+                    <div class="manual-title">Creación de Usuario en AD</div>
+                    <div class="manual-subtitle">Active Directory</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Manuales disponibles -->
+        <div class="sidebar-section">
+            <h4>🔧 Manuales de TI</h4>
+            <div class="manual-item" data-manual="user-creation">
+                <span class="manual-icon">🆔</span>
+                <div class="manual-info">
+                    <div class="manual-title">Creación de Usuario en AD</div>
+                    <div class="manual-subtitle">Active Directory</div>
+                </div>
+            </div>
+            
+            <div class="manual-item disabled" data-manual="user-modification">
+                <span class="manual-icon">✏️</span>
+                <div class="manual-info">
+                    <div class="manual-title">Modificación de Usuario</div>
+                    <div class="manual-subtitle">Próximamente</div>
+                </div>
+            </div>
+            
+            <div class="manual-item disabled" data-manual="user-deletion">
+                <span class="manual-icon">🗑️</span>
+                <div class="manual-info">
+                    <div class="manual-title">Eliminación de Usuario</div>
+                    <div class="manual-subtitle">Próximamente</div>
+                </div>
+            </div>
+            
+            <div class="manual-item disabled" data-manual="group-management">
+                <span class="manual-icon">👥</span>
+                <div class="manual-info">
+                    <div class="manual-title">Gestión de Grupos</div>
+                    <div class="manual-subtitle">Próximamente</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Manuales de Accesos -->
+        <div class="sidebar-section">
+            <h4>🔐 Gestión de Accesos</h4>
+            <div class="manual-item disabled" data-manual="access-request">
+                <span class="manual-icon">📝</span>
+                <div class="manual-info">
+                    <div class="manual-title">Solicitud de Accesos</div>
+                    <div class="manual-subtitle">Próximamente</div>
+                </div>
+            </div>
+            
+            <div class="manual-item disabled" data-manual="access-revocation">
+                <span class="manual-icon">🚫</span>
+                <div class="manual-info">
+                    <div class="manual-title">Revocación de Accesos</div>
+                    <div class="manual-subtitle">Próximamente</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Manuales de Seguridad -->
+        <div class="sidebar-section">
+            <h4>🛡️ Seguridad</h4>
+            <div class="manual-item disabled" data-manual="password-reset">
+                <span class="manual-icon">🔑</span>
+                <div class="manual-info">
+                    <div class="manual-title">Reseteo de Contraseñas</div>
+                    <div class="manual-subtitle">Próximamente</div>
+                </div>
+            </div>
+            
+            <div class="manual-item disabled" data-manual="security-audit">
+                <span class="manual-icon">🔍</span>
+                <div class="manual-info">
+                    <div class="manual-title">Auditoría de Seguridad</div>
+                    <div class="manual-subtitle">Próximamente</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sidebar-footer">
+        <div class="footer-info">
+            <small>Grupo Vanti - Gestión de Identidades</small>
+            <small>Versión 1.0 | Julio 2025</small>
+        </div>
+    </div>
+</div>
+
+<!-- Botón para abrir el sidebar -->
+<button id="openSidebar" class="sidebar-toggle-btn">
+    <span class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </span>
+    <span class="toggle-text">Manuales</span>
+</button>
+
+<!-- Overlay para cerrar el sidebar -->
+<div id="sidebarOverlay" class="sidebar-overlay"></div>

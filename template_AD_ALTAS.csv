@@ -1,0 +1,2 @@
+samAccountName;GivenName;Surname;employeeID;password;title;department;office;manager;description;company;OUCreacion;OUFinal;mail;street;employeeType;fechaExpiracion;Requerimiento;Tarea;TipoDeSolicitud;funcion
+90XXXXXXX;Nombre;Apellido;CEDULA; Vanti#CEDULA*;Cargo;Departamento;Oficina;MANAGER_ID;Descripcion del cargo;Empresa Contratista;OU=UsuariosAD;OU=Destino,OU=Estructura,OU=Organizacional,OU=Usuarios;correo@empresa.com;Direccion;Contratista;DD/MM/AAAA;REQXXXXXXX;SCTASKXXXXXXX;ALTA DE USUARIO;USU910

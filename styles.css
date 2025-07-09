@@ -1,0 +1,1236 @@
+/* Estilos corporativos inspirados en PwC */
+:root {
+    --pwc-orange: #FF8C00;
+    --pwc-dark-blue: #1F2937;
+    --pwc-light-blue: #3B82F6;
+    --pwc-gray: #6B7280;
+    --pwc-light-gray: #F3F4F6;
+    --pwc-white: #FFFFFF;
+    --pwc-text: #1F2937;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background-color: var(--pwc-white);
+    color: var(--pwc-text);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.pwc-header {
+    background: linear-gradient(135deg, var(--pwc-dark-blue) 0%, var(--pwc-light-blue) 100%);
+    color: var(--pwc-white);
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logos-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+}
+
+.pwc-logo {
+    width: 120px;
+    height: 80px;
+    background: var(--pwc-white);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.pwc-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.pwc-logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-separator {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--pwc-white);
+    opacity: 0.9;
+    font-style: italic;
+    margin: 0 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.vanti-logo {
+    width: 120px;
+    height: 80px;
+    background: var(--pwc-white);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.vanti-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.vanti-logo:hover {
+    transform: scale(1.05);
+}
+
+.pwc-header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.pwc-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.process-step {
+    background: var(--pwc-white);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--pwc-orange);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.process-step h2 {
+    color: var(--pwc-dark-blue);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.step-number {
+    background: var(--pwc-orange);
+    color: var(--pwc-white);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.process-step p {
+    margin-bottom: 1rem;
+    color: var(--pwc-gray);
+    font-size: 1rem;
+}
+
+.process-step ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.process-step li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--pwc-text);
+}
+
+.process-step li:before {
+    content: "▸";
+    color: var(--pwc-orange);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.process-step ul ul li:before {
+    content: "◦";
+    color: var(--pwc-light-blue);
+}
+
+a {
+    color: var(--pwc-light-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--pwc-orange);
+    text-decoration: underline;
+}
+
+.code-block {
+    background: var(--pwc-light-gray);
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.code-block pre {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--pwc-text);
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+code {
+    background: var(--pwc-light-gray);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--pwc-dark-blue);
+}
+
+.warning-box {
+    background: #FEF3C7;
+    border: 1px solid #F59E0B;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.info-box {
+    background: #DBEAFE;
+    border: 1px solid #3B82F6;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.warning-box strong,
+.info-box strong {
+    color: var(--pwc-dark-blue);
+}
+
+.warning-box ul {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.2rem;
+}
+
+.warning-box li {
+    margin-bottom: 0.3rem;
+    color: inherit;
+}
+
+.warning-box li:before {
+    content: none;
+}
+
+.info-box ul {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.2rem;
+}
+
+.info-box li {
+    margin-bottom: 0.3rem;
+    color: inherit;
+}
+
+.info-box li:before {
+    content: none;
+}
+
+.pwc-footer {
+    background: var(--pwc-light-gray);
+    color: var(--pwc-gray);
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #E5E7EB;
+    margin-top: 3rem;
+}
+
+.pwc-footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.developer-credit {
+    font-size: 0.8rem !important;
+    opacity: 0.7;
+    font-style: italic;
+    color: var(--pwc-gray);
+    margin-top: 0.5rem;
+}
+
+/* Nueva sección para descarga de template CSV */
+.download-section {
+    background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 100%);
+    border: 2px solid var(--pwc-light-blue);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.download-section h3 {
+    color: var(--pwc-dark-blue);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.download-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--pwc-light-blue) 0%, var(--pwc-dark-blue) 100%);
+    color: var(--pwc-white) !important;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none !important;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+    margin: 0.5rem 0;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+    background: linear-gradient(135deg, var(--pwc-dark-blue) 0%, var(--pwc-light-blue) 100%);
+}
+
+.template-note {
+    font-size: 0.9rem;
+    color: var(--pwc-gray);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* Sección de Video Tutorial */
+.video-section {
+    background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+    border: 2px solid var(--pwc-orange);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.video-section h2 {
+    color: var(--pwc-dark-blue);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.video-container {
+    background: var(--pwc-white);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-placeholder {
+    background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+    border: 2px dashed var(--pwc-gray);
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    color: var(--pwc-gray);
+}
+
+.video-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.video-placeholder h3 {
+    color: var(--pwc-dark-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.video-placeholder p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.video-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.video-info span {
+    background: var(--pwc-light-gray);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--pwc-text);
+}
+
+.video-tips {
+    background: var(--pwc-white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.video-tips h4 {
+    color: var(--pwc-dark-blue);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.video-tips ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+.video-tips li {
+    padding: 0.5rem 0;
+    border-left: 3px solid var(--pwc-orange);
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.video-tips li:before {
+    content: "🎯";
+    margin-right: 0.5rem;
+}
+
+/* Estilos para el iframe cuando se agregue el video real */
+.video-container iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para la sección de métricas y beneficios */
+.metrics-section {
+    background: linear-gradient(135deg, #FFF5E6 0%, #E8F5E8 100%);
+    border: 2px solid var(--pwc-orange);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.metrics-section h2 {
+    color: var(--pwc-dark-blue);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.metrics-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.metric-card {
+    background: var(--pwc-white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.metric-card.primary {
+    border: 2px solid var(--pwc-orange);
+    background: linear-gradient(135deg, #FFF5E6 0%, var(--pwc-white) 100%);
+}
+
+.metric-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--pwc-orange);
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--pwc-dark-blue);
+    margin-bottom: 0.5rem;
+}
+
+.metric-description {
+    font-size: 0.9rem;
+    color: var(--pwc-gray);
+    font-style: italic;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.benefit-item {
+    background: var(--pwc-white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--pwc-light-blue);
+}
+
+.benefit-item h4 {
+    color: var(--pwc-dark-blue);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.benefit-item p {
+    color: var(--pwc-gray);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.comparison-section {
+    margin-top: 3rem;
+}
+
+.comparison-section h3 {
+    color: var(--pwc-dark-blue);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    text-align: left;
+}
+
+.comparison-item {
+    background: var(--pwc-white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.comparison-item.before {
+    border-left: 4px solid #DC3545;
+}
+
+.comparison-item.after {
+    border-left: 4px solid #28A745;
+}
+
+.comparison-item h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.comparison-item.before h4 {
+    color: #DC3545;
+}
+
+.comparison-item.after h4 {
+    color: #28A745;
+}
+
+.comparison-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.comparison-item li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--pwc-light-gray);
+}
+
+.comparison-item li:last-child {
+    border-bottom: none;
+}
+
+.comparison-item.before li:before {
+    content: "❌";
+    margin-right: 0.5rem;
+}
+
+.comparison-item.after li:before {
+    content: "✅";
+    margin-right: 0.5rem;
+}
+
+/* Navegación rápida en header */
+.quick-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn:hover {
+    background: var(--pwc-orange);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .quick-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .nav-btn {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pwc-header h1 {
+        font-size: 2rem;
+    }
+    
+    .pwc-main {
+        padding: 2rem 1rem;
+    }
+    
+    .process-step {
+        padding: 1.5rem;
+    }
+    
+    .process-step h2 {
+        font-size: 1.3rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .logos-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .pwc-logo,
+    .vanti-logo {
+        width: 100px;
+        height: 60px;
+    }
+    
+    .logo-separator {
+        font-size: 1rem;
+        margin: 0.2rem 0;
+    }
+
+    .video-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .video-tips ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-placeholder {
+        padding: 2rem 1rem;
+    }
+    
+    .video-icon {
+        font-size: 3rem;
+    }
+
+    .metrics-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .metric-value {
+        font-size: 2rem;
+    }
+    
+    .metric-icon {
+        font-size: 2rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #000;
+        background: white !important;
+    }
+    
+    .pwc-header {
+        background: white !important;
+        color: #000 !important;
+        border-bottom: 2px solid #FF8C00;
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+        page-break-after: avoid;
+    }
+    
+    .logos-container {
+        margin-bottom: 1rem;
+    }
+    
+    .pwc-logo,
+    .vanti-logo {
+        width: 80px !important;
+        height: 50px !important;
+        border: 1px solid #ddd;
+    }
+    
+    .logo-separator {
+        color: #000 !important;
+        opacity: 1 !important;
+        text-shadow: none !important;
+    }
+    
+    .pwc-header h1 {
+        color: #000 !important;
+        font-size: 18pt;
+        margin: 0.5rem 0;
+    }
+    
+    .subtitle {
+        color: #666 !important;
+        font-size: 12pt;
+    }
+    
+    .pwc-main {
+        padding: 0;
+        max-width: none;
+    }
+    
+    .process-step {
+        background: white !important;
+        border: 1px solid #ddd;
+        border-radius: 0;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        page-break-inside: avoid;
+        border-left: 3px solid #FF8C00 !important;
+    }
+    
+    .process-step h2 {
+        color: #000 !important;
+        font-size: 14pt;
+        margin-bottom: 0.5rem;
+        page-break-after: avoid;
+    }
+    
+    .step-number {
+        background: #FF8C00 !important;
+        color: white !important;
+        width: 25px !important;
+        height: 25px !important;
+        font-size: 12pt;
+        margin-right: 0.5rem;
+    }
+    
+    .process-step p,
+    .process-step li {
+        font-size: 11pt;
+        color: #000;
+        line-height: 1.3;
+    }
+    
+    .code-block {
+        background: #f8f8f8 !important;
+        border: 1px solid #ccc !important;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        page-break-inside: avoid;
+    }
+    
+    .code-block pre {
+        font-size: 9pt;
+        color: #000;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+    
+    .warning-box {
+        background: #fff9e6 !important;
+        border: 1px solid #f0ad4e !important;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        page-break-inside: avoid;
+    }
+    
+    .info-box {
+        background: #f0f8ff !important;
+        border: 1px solid #5bc0de !important;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        page-break-inside: avoid;
+    }
+    
+    .warning-box strong,
+    .info-box strong {
+        color: #000 !important;
+    }
+    
+    a {
+        color: #000 !important;
+        text-decoration: underline;
+    }
+    
+    a:after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #666;
+    }
+    
+    .pwc-footer {
+        background: white !important;
+        color: #000 !important;
+        border-top: 1px solid #ddd;
+        padding: 0.5rem 0;
+        margin-top: 1rem;
+        page-break-inside: avoid;
+        text-align: center;
+    }
+    
+    .pwc-footer p {
+        font-size: 10pt;
+        margin: 0.2rem 0;
+    }
+    
+    .developer-credit {
+        font-size: 9pt !important;
+        color: #666 !important;
+    }
+    
+    /* Ocultar elementos que no son necesarios en impresión */
+    .print-btn,
+    .copy-btn,
+    #reading-progress {
+        display: none !important;
+    }
+    
+    /* Asegurar que los pasos no se corten */
+    .process-step {
+        page-break-inside: avoid;
+    }
+    
+    /* Mejorar la paginación */
+    h2 {
+        page-break-after: avoid;
+    }
+    
+    /* Estilo para primera página */
+    .pwc-header {
+        page-break-after: avoid;
+    }
+    
+    /* Asegurar márgenes apropiados */
+    @page {
+        margin: 2cm 1.5cm;
+        size: A4;
+    }
+
+    /* Estilos para impresión de la sección de descarga */
+    .download-section {
+        background: #f8f9fa !important;
+        border: 1px solid #ddd !important;
+        page-break-inside: avoid;
+    }
+    
+    .download-btn {
+        background: #666 !important;
+        color: white !important;
+        border: 1px solid #333;
+    }
+    
+    .download-btn:after {
+        content: " (template_AD_ALTAS.csv)";
+        font-size: 9pt;
+        color: #666;
+    }
+
+    /* Estilos de impresión para la sección de video */
+    .video-section {
+        background: #f8f9fa !important;
+        border: 1px solid #ddd !important;
+        page-break-inside: avoid;
+    }
+    
+    .video-placeholder {
+        background: #f0f0f0 !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .video-container iframe {
+        display: none !important;
+    }
+    
+    .video-placeholder:after {
+        content: " (Video disponible en versión digital)";
+        font-size: 10pt;
+        color: #666;
+        font-style: italic;
+    }
+
+    /* Estilos de impresión para métricas */
+    .metrics-section {
+        background: #fff5e6 !important;
+        border: 1px solid #ddd !important;
+        page-break-inside: avoid;
+    }
+    
+    .metric-card {
+        background: white !important;
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+    }
+    
+    .metric-card.primary {
+        border: 2px solid #FF8C00 !important;
+    }
+    
+    .comparison-grid {
+        page-break-inside: avoid;
+    }
+}
+
+/* Estilos adicionales para las subsecciones h3 dentro de los pasos del proceso */
+.process-step h3 {
+    font-size: 1.2rem;
+    color: var(--pwc-dark-blue);
+    margin: 1.5rem 0 0.8rem 0;
+    font-weight: 600;
+    border-left: 4px solid var(--pwc-light-blue);
+    padding-left: 0.8rem;
+    background: rgba(59, 130, 246, 0.05);
+    padding: 0.6rem 0.8rem;
+    border-radius: 4px;
+}
+
+.process-step h3:first-child {
+    margin-top: 1rem;
+}
+
+/* Estilos para validación de Office 365 */
+.validation-flow {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.validation-step {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.validation-step h3 {
+    color: var(--pwc-dark-blue);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.office-license-box {
+    background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+    border: 2px solid #0EA5E9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.office-license-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0EA5E9, #3B82F6);
+}
+
+.office-license-box h3 {
+    color: #0F172A;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.office-license-box p {
+    margin-bottom: 0.8rem;
+    color: #1E293B;
+    font-weight: 500;
+}
+
+.office-license-box ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.office-license-box li {
+    margin-bottom: 0.5rem;
+    color: #1E293B;
+    font-weight: 500;
+}
+
+.office-license-box li:before {
+    content: none;
+}
+
+.office-license-box strong {
+    color: #0F172A;
+    font-weight: 600;
+}
+
+.validation-step ul {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+.validation-step li {
+    margin-bottom: 0.4rem;
+    color: var(--pwc-text);
+}
+
+.validation-step li:before {
+    content: none;
+}
+
+.validation-step code {
+    background: #F1F5F9;
+    color: #0F172A;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Estilos para asignación de grupos por defecto */
+.groups-assignment {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.group-type-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.group-type-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.group-type-card.plantilla {
+    border-color: #10B981;
+    background: linear-gradient(135deg, #ECFDF5 0%, #F0FDF4 100%);
+}
+
+.group-type-card.contratista {
+    border-color: #F59E0B;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+}
+
+.group-type-card.temporal {
+    border-color: #3B82F6;
+    background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+}
+
+.group-type-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.group-type-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--pwc-dark-blue);
+}
+
+.employee-type-badge {
+    background: var(--pwc-dark-blue);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+.group-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.group-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.group-item:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateX(4px);
+}
+
+.group-code {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--pwc-dark-blue);
+    background: rgba(31, 41, 55, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    align-self: flex-start;
+}
+
+.group-description {
+    font-size: 0.9rem;
+    color: #6B7280;
+    font-style: italic;
+    margin-left: 0.5rem;
+}
+
+/* Efectos específicos por tipo */
+.group-type-card.plantilla .group-code {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+}
+
+.group-type-card.contratista .group-code {
+    background: rgba(245, 158, 11, 0.1);
+    color: #D97706;
+}
+
+.group-type-card.temporal .group-code {
+    background: rgba(59, 130, 246, 0.1);
+    color: #2563EB;
+}
+
+/* Responsive para tarjetas de grupos */
+@media (max-width: 768px) {
+    .groups-assignment {
+        grid-template-columns: 1fr;
+    }
+    
+    .group-type-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .employee-type-badge {
+        align-self: flex-start;
+    }
+}

@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Proceso - Gestión de Grupos en Active Directory</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="group-management.css">
+</head>
+<body>
+    <header class="pwc-header">
+        <div class="logos-container">
+            <div class="pwc-logo">
+                <img src="https://www.pwc.com/ia/es/publicaciones/Imagenes-Prensa/Press-Release-Logo.jpg" alt="PwC Logo" />
+            </div>
+            <div class="logo-separator">por</div>
+            <div class="vanti-logo">
+                <img src="https://images.ctfassets.net/3brzg7q3bvg1/5qkqIbzB1VpZ1DapXhIMho/30e84d821498ebe49b89e1f32597e7c1/vanti-logo-og.png" alt="Vanti Logo" />
+            </div>
+        </div>
+        <h1>Manual de Proceso: Gestión de Grupos en Active Directory</h1>
+        <div class="subtitle">Grupo Vanti</div>
+        
+        <!-- Navegación rápida -->
+        <div class="quick-nav">
+            <a href="#video-section" class="nav-btn">📺 Video</a>
+            <a href="#process-steps" class="nav-btn">📋 Proceso</a>
+            <a href="#group-types" class="nav-btn">👥 Tipos de Grupos</a>
+            <a href="#metrics-section" class="nav-btn">📊 Métricas</a>
+        </div>
+    </header>
+    
+    <main class="pwc-main">
+        <section class="video-section" id="video-section">
+            <h2>🎥 Video Tutorial - Gestión de Grupos</h2>
+            <p>Aprende todo sobre la gestión de grupos en Active Directory:</p>
+            
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <div class="video-icon">▶️</div>
+                    <h3>Video Tutorial: Gestión de Grupos en AD</h3>
+                    <p>Próximamente disponible</p>
+                    <div class="video-info">
+                        <span>⏱️ Duración estimada: 20 minutos</span>
+                        <span>📋 Incluye: Creación, modificación y eliminación</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-tips">
+                <h4>💡 Contenido del video:</h4>
+                <ul>
+                    <li>Tipos de grupos en Active Directory</li>
+                    <li>Creación de grupos de seguridad</li>
+                    <li>Gestión de membresías</li>
+                    <li>Asignación de permisos</li>
+                    <li>Grupos anidados y mejores prácticas</li>
+                    <li>Auditoría y mantenimiento</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="group-types-section" id="group-types">
+            <h2>👥 Inventario de Grupos - Grupo Vanti</h2>
+            <p>Catálogo completo de grupos organizados por plataforma y funcionalidad:</p>
+            
+            <div class="group-inventory-tabs">
+                <button class="tab-button active" onclick="showGroupCategory('ad')">🏢 Grupos AD</button>
+                <button class="tab-button" onclick="showGroupCategory('azure')">☁️ Azure/Office 365</button>
+                <button class="tab-button" onclick="showGroupCategory('vpn')">🔒 Grupos VPN</button>
+            </div>
+            
+            <!-- Grupos AD -->
+            <div id="ad-groups" class="group-category-content active">
+                <h3>🏢 Grupos Active Directory (AD)</h3>
+                <div class="groups-table-container">
+                    <table class="groups-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre del Grupo</th>
+                                <th>Descripción</th>
+                                <th>Ubicación</th>
+                                <th>Aprobación</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>GUSAEXGENESYSP</code></td>
+                                <td>Grupo de usuarios Genesys Producción Externos</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor TI</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAEXGENESYSP')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSECMDPS_SOPORTE</code></td>
+                                <td>Cuentas de Soporte técnico permitidas para CMD y powershell</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Jefe Soporte</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSECMDPS_SOPORTE')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAPTOPR</code></td>
+                                <td>Acceso a Vanti Aliados</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor TI</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAPTOPR')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSASOLBOOKE</code></td>
+                                <td>Grupo de usuarios con acceso al sitio de SharePoint Solution Book Terceros</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Administrador SharePoint</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSASOLBOOKE')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSASOLBOOKP</code></td>
+                                <td>Grupo de usuarios con acceso al sitio de SharePoint Solution Book Plantilla</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Administrador SharePoint</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSASOLBOOKP')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSASOLBOOKADM</code></td>
+                                <td>Grupo de usuarios con acceso al sitio de SharePoint Solution Book Administradores Funcionales</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Administrador SharePoint</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSASOLBOOKADM')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSADM_VHCC001</code></td>
+                                <td>Grupo solicitado para acceder a la APP Debmedia - Canal Presencial</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor Aplicaciones</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSADM_VHCC001')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSADM_VHCC002</code></td>
+                                <td>Grupo solicitado para acceder a la APP Debmedia_Operaciones- Formularios de Agendamiento</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor Aplicaciones</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSADM_VHCC002')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>ENDPOINT LASERFICHE</code></td>
+                                <td>Permisos de ingreso a Laser Fiche (Gestor de Contenido)</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Administrador Contenido</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('ENDPOINT LASERFICHE')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAWIFIE</code></td>
+                                <td>Grupo de usuario acceso wifi externos - Tarea por sebastian borda y aprobado por ciber</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Ciberseguridad</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAWIFIE')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAGCPDL</code></td>
+                                <td>GCP (Google Cloud Platform)</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor Cloud</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAGCPDL')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>Terminal Signatural</code></td>
+                                <td>SIG NATURAL</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor Aplicaciones</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('Terminal Signatural')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSACVLEGIS</code></td>
+                                <td>Grupo asociado a la App Portal de Consulta Virtual</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor Aplicaciones</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSACVLEGIS')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAON_VHCDMR_P</code></td>
+                                <td>Onboarding - Nueva edificación - Captación de servicio saturación - Plantilla Medmedia</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor Comercial</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAON_VHCDMR_P')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAON_VHCDMR_E</code></td>
+                                <td>Onboarding - Nueva edificación - Captación de servicio saturación - Temporales y Terceros</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor Comercial</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAON_VHCDMR_E')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAWT_VTIJPD_P</code></td>
+                                <td>Work and Track - Producción - Plantilla</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor Aplicaciones</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAWT_VTIJPD_P')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAWT_VTIJPD_E</code></td>
+                                <td>Work and Track - Producción - Externos</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor Aplicaciones</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAWT_VTIJPD_E')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAGCPAPP</code></td>
+                                <td>GCP - únicamente aprobado por Julio Ardila</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Julio Ardila</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAGCPAPP')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAORACLECLOUD</code></td>
+                                <td>OCI</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor Cloud</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAORACLECLOUD')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAO365_Movil_E</code></td>
+                                <td>Grupo móvil 365</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor TI</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAO365_Movil_E')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAWSMOBIL</code></td>
+                                <td>Proyecto Smart Mobility AWS</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor Cloud</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAWSMOBIL')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAJPADMINT</code></td>
+                                <td>Aprobación Ciberseguridad</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Ciberseguridad</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAJPADMINT')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSADA_VTIDIN</code></td>
+                                <td>Para todo segundo usuario - Aprobación Ciberseguridad</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Ciberseguridad</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSADA_VTIDIN')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSADA_VTIDINCS</code></td>
+                                <td>Para toda cuenta de servicio - Aprobación Ciberseguridad</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Ciberseguridad</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSADA_VTIDINCS')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSA0365_Exterior</code></td>
+                                <td>Grupo de conexiones desde el exterior - Aprobación Ciberseguridad</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Ciberseguridad</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSA0365_Exterior')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAPBI_VTIGDA</code></td>
+                                <td>Grupo Reporte 3 es de una Transacción en SAP (Reporte EOS)</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor SAP</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAPBI_VTIGDA')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>EWEB SSTT</code></td>
+                                <td>Service_Desk</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Jefe Service Desk</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('EWEB SSTT')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAPTADM</code></td>
+                                <td>Acceso a Vanti Aliados - QA & administrador</td>
+                                <td>D.A</td>
+                                <td><span class="approval-tag person">Supervisor TI</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAPTADM')">📋</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="group-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">28</span>
+                        <span class="stat-label">Grupos AD Total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Ubicados en D.A</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grupos Azure/Office 365 -->
+            <div id="azure-groups" class="group-category-content">
+                <h3>☁️ Grupos Azure/Office 365</h3>
+                <div class="groups-table-container">
+                    <table class="groups-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre del Grupo</th>
+                                <th>Descripción</th>
+                                <th>Ubicación</th>
+                                <th>Aprobadores</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>Vanti_Servicenow</code></td>
+                                <td>Acceso a HIT</td>
+                                <td>Office 365</td>
+                                <td><span class="approval-tag auto">Flujo de altas</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('Vanti_Servicenow')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVANTIVLPE</code></td>
+                                <td>Vanti Listo</td>
+                                <td>Azure</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVANTIVLPE')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVANTIASISTPE</code></td>
+                                <td>Vanti Max</td>
+                                <td>Azure</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVANTIASISTPE')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GPCC - Produccion</code></td>
+                                <td>GPCC</td>
+                                <td>Office 365</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GPCC - Produccion')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>Group tableau SAML</code></td>
+                                <td>Tableau Cloud</td>
+                                <td>Office 365</td>
+                                <td><span class="approval-tag person">Edgar Martelo</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('Group tableau SAML')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>Gestion R-CERTI</code></td>
+                                <td>E-Web</td>
+                                <td>Office 365</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('Gestion R-CERTI')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>EWEB CONSULTA</code></td>
+                                <td>E-Web</td>
+                                <td>Office 365</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('EWEB CONSULTA')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>EWEB AT - contact center</code></td>
+                                <td>E-Web</td>
+                                <td>Office 365</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('EWEB AT - contact center')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>EWEB JEFE CCAU</code></td>
+                                <td>E-Web</td>
+                                <td>Office 365</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('EWEB JEFE CCAU')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>EWEB RO</code></td>
+                                <td>E-Web</td>
+                                <td>Office 365</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('EWEB RO')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>EWEB SAC Refresco 1</code></td>
+                                <td>E-Web</td>
+                                <td>Office 365</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('EWEB SAC Refresco 1')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>EWEB SAC Refresco 2</code></td>
+                                <td>E-Web</td>
+                                <td>Office 365</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('EWEB SAC Refresco 2')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>EWEB SAC Refresco 3</code></td>
+                                <td>E-Web</td>
+                                <td>Office 365</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('EWEB SAC Refresco 3')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>EWEB SAC Refresco 4</code></td>
+                                <td>E-Web</td>
+                                <td>Office 365</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('EWEB SAC Refresco 4')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAORACLECLOUD</code></td>
+                                <td>OCI</td>
+                                <td>Azure</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAORACLECLOUD')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAMATIA_EXT_AMATIA</code></td>
+                                <td>Amatia</td>
+                                <td>Azure</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAMATIA_EXT_AMATIA')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>Suplos 0008xxxxxx</code></td>
+                                <td>Vanti_Plantilla</td>
+                                <td>Directorio Activo - Azure</td>
+                                <td><span class="approval-tag na">N/A</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('Suplos 0008xxxxxx')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>Suplos (Solicita o aprueba)</code></td>
+                                <td>gusapia_ext_piabastecimiento</td>
+                                <td>Azure</td>
+                                <td><span class="approval-tag person">Blanca Pinilla / Jennifer Becerra</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('Suplos (Solicita o aprueba)')">📋</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="group-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">18</span>
+                        <span class="stat-label">Grupos Azure/O365</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Con aprobadores específicos</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grupos VPN -->
+            <div id="vpn-groups" class="group-category-content">
+                <h3>🔒 Grupos VPN</h3>
+                <div class="groups-table-container">
+                    <table class="groups-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre del Grupo</th>
+                                <th>Descripción de la VPN</th>
+                                <th>Aprobación</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>GUSAVPNVGCP</code></td>
+                                <td>Grupo VPN de la Vicepresidencia de Grandes Clientes Plantilla y temporales</td>
+                                <td><span class="approval-tag person">VP Grandes Clientes</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVGCP')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVRH</code></td>
+                                <td>Grupo VPN de la Vicepresidencia de Recursos Humanos Plantilla, temporales y Externos</td>
+                                <td><span class="approval-tag person">VP Recursos Humanos</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVRH')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVHCP</code></td>
+                                <td>Grupo VPN de la Vicepresidencia de Hogar y Comercial Plantilla y Temporales</td>
+                                <td><span class="approval-tag person">VP Hogar y Comercial</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVHCP')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVTIP</code></td>
+                                <td>Grupo VPN de la Vicepresidencia de Tecnologías de la Información Plantilla y temporales</td>
+                                <td><span class="approval-tag person">VP Tecnologías</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVTIP')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVTIE</code></td>
+                                <td>Grupo VPN de la Vicepresidencia de Tecnologías de la Información Externos</td>
+                                <td><span class="approval-tag person">VP Tecnologías</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVTIE')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVAL</code></td>
+                                <td>Grupo VPN de la Vicepresidencia de Asuntos Legales Plantilla, temporales y externos</td>
+                                <td><span class="approval-tag person">VP Asuntos Legales</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVAL')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVEFP</code></td>
+                                <td>Grupo VPN de la Vicepresidencia de Estrategia y finanzas Plantilla y temporales</td>
+                                <td><span class="approval-tag person">VP Estrategia y Finanzas</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVEFP')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVA</code></td>
+                                <td>Grupo VPN de la Vicepresidencia de Auditoría Plantilla y Externos y temporales</td>
+                                <td><span class="approval-tag person">VP Auditoría</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVA')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVTP</code></td>
+                                <td>Grupo VPN de la Vicepresidencia Técnica Plantilla y temporales</td>
+                                <td><span class="approval-tag person">VP Técnica</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVTP')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVTPCGA</code></td>
+                                <td>Planificación Calidad y Gestión de Activos</td>
+                                <td><span class="approval-tag person">Supervisor Técnico</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVTPCGA')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVTOR</code></td>
+                                <td>Operaciones de Red</td>
+                                <td><span class="approval-tag person">Supervisor Técnico</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVTOR')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVTC</code></td>
+                                <td>Construcción</td>
+                                <td><span class="approval-tag person">Supervisor Técnico</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVTC')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVTGFA</code></td>
+                                <td>Gestión de Fraudes y Anomalías</td>
+                                <td><span class="approval-tag person">Supervisor Técnico</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVTGFA')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVTM</code></td>
+                                <td>Vicepresidencia Técnica Mantenimiento</td>
+                                <td><span class="approval-tag person">Supervisor Técnico</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVTM')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVTOC</code></td>
+                                <td>Operaciones Clientes</td>
+                                <td><span class="approval-tag person">Supervisor Técnico</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVTOC')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVTPCCT</code></td>
+                                <td>Planificación Comercial y CAS Técnica</td>
+                                <td><span class="approval-tag person">Supervisor Técnico</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVTPCCT')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNEC</code></td>
+                                <td>Grupo VPN de Ética y cumplimiento</td>
+                                <td><span class="approval-tag person">Supervisor Ética</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNEC')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVEFGERESFE</code></td>
+                                <td>VPN Vicepresidencia de Estrategia y Finanzas Gerencia de Resultados Financieros Externo</td>
+                                <td><span class="approval-tag person">Supervisor Finanzas</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVEFGERESFE')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVGCGNVTE</code></td>
+                                <td>Grupo de usuarios de la Vicepresidencia de Grandes Cliente GNV Talleres</td>
+                                <td><span class="approval-tag person">Supervisor Grandes Clientes</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVGCGNVTE')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVTIPERIFE</code></td>
+                                <td>Grupo de usuarios de la Vicepresidencia de TI del Proveedor Periferia IT</td>
+                                <td><span class="approval-tag person">Supervisor TI</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVTIPERIFE')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNVTIIKUNACE</code></td>
+                                <td>Grupo de Usuarios con Acceso VPN de la Vicepresidencia de TI con Acceso Appliance NAC</td>
+                                <td><span class="approval-tag person">Supervisor TI</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNVTIIKUNACE')">📋</button></td>
+                            </tr>
+                            <tr>
+                                <td><code>GUSAVPNADMTIDA</code></td>
+                                <td>No se tiene descripción (Data & Analytics)</td>
+                                <td><span class="approval-tag person">Supervisor Data & Analytics</span></td>
+                                <td><button class="action-btn" onclick="copyGroupName('GUSAVPNADMTIDA')">📋</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="group-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">22</span>
+                        <span class="stat-label">Grupos VPN Total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Vicepresidencias</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="groupSearch" placeholder="🔍 Buscar grupo por nombre o descripción..." onkeyup="searchGroups()">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+        </section>
+        
+        <section class="process-step" id="process-steps">
+            <h2><span class="step-number">1</span>Recepción de la solicitud</h2>
+            <p>La solicitud de gestión de grupos llega a través de los canales oficiales:</p>
+            <ul>
+                <li>🔗 <a href="https://hit.service-now.com/now" target="_blank">HIT - ServiceNow</a></li>
+                <li>Especificar el tipo de operación: creación, modificación o eliminación</li>
+                <li>Incluir justificación business y aprobaciones necesarias</li>
+            </ul>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">2</span>Validación y aprobación</h2>
+            <p>Se validan los permisos y se obtienen las aprobaciones necesarias:</p>
+            
+            <h3>🔍 Validaciones requeridas</h3>
+            <ul>
+                <li>Verificar que el solicitante tenga permisos para la operación</li>
+                <li>Confirmar que el grupo no exista (para creación)</li>
+                <li>Validar el alcance y tipo de grupo solicitado</li>
+                <li>Revisar las políticas de naming conventions</li>
+            </ul>
+            
+            <h3>✅ Aprobaciones necesarias</h3>
+            <div class="approval-matrix">
+                <div class="approval-item">
+                    <h4>👨‍💼 Supervisor Inmediato</h4>
+                    <p>Para grupos departamentales o de proyecto</p>
+                </div>
+                <div class="approval-item">
+                    <h4>🏢 Gerente de Área</h4>
+                    <p>Para grupos con acceso a recursos críticos</p>
+                </div>
+                <div class="approval-item">
+                    <h4>🔒 Seguridad de la Información</h4>
+                    <p>Para grupos con permisos elevados</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">3</span>Creación del grupo</h2>
+            <p>Se procede con la creación del grupo siguiendo los estándares establecidos:</p>
+            
+            <h3>🏗️ Proceso de creación</h3>
+            <div class="code-block">
+                <pre>New-ADGroup -Name "GRP_NOMBRE_GRUPO" -GroupScope Global -GroupCategory Security -Path "OU=Grupos,DC=vanti,DC=local"</pre>
+            </div>
+            
+            <h3>📝 Convenciones de nomenclatura</h3>
+            <div class="naming-conventions">
+                <div class="convention-item">
+                    <h4>🛡️ Grupos de Seguridad</h4>
+                    <p><code>GRP_[AREA]_[FUNCION]</code></p>
+                    <p class="example">Ejemplo: GRP_FINANZAS_LECTORES</p>
+                </div>
+                <div class="convention-item">
+                    <h4>📧 Grupos de Distribución</h4>
+                    <p><code>DL_[AREA]_[PROPOSITO]</code></p>
+                    <p class="example">Ejemplo: DL_RRHH_COMUNICADOS</p>
+                </div>
+                <div class="convention-item">
+                    <h4>🌐 Grupos Universales</h4>
+                    <p><code>UG_[FUNCION]_[ALCANCE]</code></p>
+                    <p class="example">Ejemplo: UG_ADMIN_GLOBAL</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">4</span>Configuración de propiedades</h2>
+            <p>Se configuran las propiedades del grupo según los requerimientos:</p>
+            <ul>
+                <li><strong>Descripción:</strong> Propósito y alcance del grupo</li>
+                <li><strong>Correo electrónico:</strong> Para grupos de distribución</li>
+                <li><strong>Administrador:</strong> Usuario responsable del grupo</li>
+                <li><strong>Miembros iniciales:</strong> Usuarios que deben pertenecer al grupo</li>
+                <li><strong>Permisos:</strong> Recursos a los que el grupo tendrá acceso</li>
+            </ul>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">5</span>Asignación de permisos</h2>
+            <p>Se asignan los permisos correspondientes al grupo creado:</p>
+            
+            <h3>📁 Permisos de archivos y carpetas</h3>
+            <div class="permissions-grid">
+                <div class="permission-item">
+                    <h4>👁️ Lectura</h4>
+                    <p>Visualizar contenido sin modificar</p>
+                </div>
+                <div class="permission-item">
+                    <h4>✏️ Escritura</h4>
+                    <p>Crear y modificar archivos</p>
+                </div>
+                <div class="permission-item">
+                    <h4>🔧 Modificación</h4>
+                    <p>Cambiar propiedades y contenido</p>
+                </div>
+                <div class="permission-item">
+                    <h4>🔒 Control total</h4>
+                    <p>Permisos completos sobre el recurso</p>
+                </div>
+            </div>
+            
+            <h3>🖥️ Permisos de aplicaciones</h3>
+            <ul>
+                <li>Acceso a aplicaciones empresariales</li>
+                <li>Permisos específicos dentro de las aplicaciones</li>
+                <li>Configuración de roles y funcionalidades</li>
+            </ul>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">6</span>Gestión de membresías</h2>
+            <p>Se administran los miembros del grupo según las necesidades:</p>
+            
+            <h3>➕ Agregar miembros</h3>
+            <div class="code-block">
+                <pre>Add-ADGroupMember -Identity "GRP_NOMBRE_GRUPO" -Members "usuario1", "usuario2"</pre>
+            </div>
+            
+            <h3>➖ Remover miembros</h3>
+            <div class="code-block">
+                <pre>Remove-ADGroupMember -Identity "GRP_NOMBRE_GRUPO" -Members "usuario1"</pre>
+            </div>
+            
+            <h3>🔍 Auditar membresías</h3>
+            <div class="code-block">
+                <pre>Get-ADGroupMember -Identity "GRP_NOMBRE_GRUPO" | Select-Object Name, SamAccountName</pre>
+            </div>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">7</span>Documentación y trazabilidad</h2>
+            <p>Se documenta la creación y configuración del grupo:</p>
+            
+            <div class="documentation-checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="doc1" checked disabled>
+                    <label for="doc1">Registrar en el campo 'info' del grupo</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="doc2" checked disabled>
+                    <label for="doc2">Actualizar inventario de grupos</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="doc3" checked disabled>
+                    <label for="doc3">Generar reporte de creación</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="doc4" checked disabled>
+                    <label for="doc4">Notificar a stakeholders</label>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <strong>📝 Formato de documentación:</strong>
+                <div class="code-block">
+                    <pre>--------------------------------------------------------------------------------------------------------------
+REQ: REQXXXXXX - TASK: TASKXXXX - TIPO: Creación de Grupo
+FECHA DE CREACIÓN: DD/MM/AAAA
+SOLICITANTE: [Nombre del solicitante]
+PROPÓSITO: [Descripción del propósito del grupo]</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-step">
+            <h2><span class="step-number">8</span>Validación y cierre</h2>
+            <p>Se valida el correcto funcionamiento del grupo y se cierra la solicitud:</p>
+            <ul>
+                <li>Verificar que el grupo se creó correctamente</li>
+                <li>Confirmar que los permisos funcionan según lo esperado</li>
+                <li>Validar que los miembros pueden acceder a los recursos</li>
+                <li>Actualizar el ticket en HIT con la resolución</li>
+                <li>Programar revisión periódica del grupo</li>
+            </ul>
+        </section>
+        
+        <section class="metrics-section" id="metrics-section">
+            <h2>📊 Métricas de Gestión de Grupos</h2>
+            
+            <div class="metrics-container">
+                <div class="metric-card primary">
+                    <div class="metric-icon">👥</div>
+                    <div class="metric-value">250+</div>
+                    <div class="metric-label">Grupos Activos</div>
+                    <div class="metric-description">En toda la organización</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">⚡</div>
+                    <div class="metric-value">90%</div>
+                    <div class="metric-label">Automatización</div>
+                    <div class="metric-description">De procesos rutinarios</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">🔒</div>
+                    <div class="metric-value">99.9%</div>
+                    <div class="metric-label">Seguridad</div>
+                    <div class="metric-description">Cumplimiento de políticas</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">📈</div>
+                    <div class="metric-value">45%</div>
+                    <div class="metric-label">Reducción de Tiempo</div>
+                    <div class="metric-description">En gestión de accesos</div>
+                </div>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>🎯 Gestión Centralizada</h4>
+                    <p>Administración unificada de todos los grupos desde Active Directory, facilitando el control y la auditoría.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4>🔐 Seguridad Mejorada</h4>
+                    <p>Implementación de principio de menor privilegio mediante grupos específicos para cada función.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4>⚡ Eficiencia Operativa</h4>
+                    <p>Automatización de asignaciones de permisos y reducción de tareas manuales repetitivas.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4>📊 Auditoría Completa</h4>
+                    <p>Trazabilidad completa de todas las operaciones y cambios realizados en los grupos.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pwc-footer">
+        <p>Manual de Proceso - Grupo Vanti | Gestión de Identidades y Accesos</p>
+        <p>Fecha de actualización: 08 de Julio de 2025</p>
+        <p class="developer-credit">Desarrollado por Cristhian G. Rodriguez Parra</p>
+    </footer>
+    
+    <!-- Sidebar Global -->
+    <div id="globalSidebar" class="global-sidebar">
+        <div class="sidebar-header">
+            <h3>📚 Manuales de Proceso</h3>
+            <button id="closeSidebar" class="close-btn">&times;</button>
+        </div>
+        
+        <div class="sidebar-content">
+            <div class="sidebar-section current-section">
+                <h4>📋 Manual Actual</h4>
+                <div class="manual-item active">
+                    <span class="manual-icon">👥</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Gestión de Grupos</div>
+                        <div class="manual-subtitle">Active Directory</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h4>🔧 Manuales de TI</h4>
+                <div class="manual-item" data-manual="user-creation" data-url="index.html">
+                    <span class="manual-icon">🆔</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Creación de Usuario en AD</div>
+                        <div class="manual-subtitle">Active Directory</div>
+                    </div>
+                </div>
+                
+                <div class="manual-item disabled" data-manual="user-modification">
+                    <span class="manual-icon">✏️</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Modificación de Usuario</div>
+                        <div class="manual-subtitle">Próximamente</div>
+                    </div>
+                </div>
+                
+                <div class="manual-item disabled" data-manual="user-deletion">
+                    <span class="manual-icon">🗑️</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Eliminación de Usuario</div>
+                        <div class="manual-subtitle">Próximamente</div>
+                    </div>
+                </div>
+                
+                <div class="manual-item active" data-manual="group-management">
+                    <span class="manual-icon">👥</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Gestión de Grupos</div>
+                        <div class="manual-subtitle">Active Directory</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h4>🔐 Gestión de Accesos</h4>
+                <div class="manual-item disabled" data-manual="access-request">
+                    <span class="manual-icon">📝</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Solicitud de Accesos</div>
+                        <div class="manual-subtitle">Próximamente</div>
+                    </div>
+                </div>
+                
+                <div class="manual-item disabled" data-manual="access-revocation">
+                    <span class="manual-icon">🚫</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Revocación de Accesos</div>
+                        <div class="manual-subtitle">Próximamente</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h4>🛡️ Seguridad</h4>
+                <div class="manual-item disabled" data-manual="password-reset">
+                    <span class="manual-icon">🔑</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Reseteo de Contraseñas</div>
+                        <div class="manual-subtitle">Próximamente</div>
+                    </div>
+                </div>
+                
+                <div class="manual-item disabled" data-manual="security-audit">
+                    <span class="manual-icon">🔍</span>
+                    <div class="manual-info">
+                        <div class="manual-title">Auditoría de Seguridad</div>
+                        <div class="manual-subtitle">Próximamente</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sidebar-footer">
+            <div class="footer-info">
+                <small>Grupo Vanti - Gestión de Identidades</small>
+                <small>Versión 1.0 | Julio 2025</small>
+            </div>
+        </div>
+    </div>
+
+    <button id="openSidebar" class="sidebar-toggle-btn" onclick="console.log('Click detectado!'); if(window.globalSidebar) window.globalSidebar.open(); else console.error('globalSidebar no encontrado');">
+        <span class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <span class="toggle-text">Manuales</span>
+    </button>
+
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+    
+    <script src="script.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="group-management.js"></script>
+</body>
+</html>

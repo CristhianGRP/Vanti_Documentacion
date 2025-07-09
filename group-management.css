@@ -1,0 +1,644 @@
+/* ============================================
+   GESTIÓN DE GRUPOS - ESTILOS CSS ESPECÍFICOS
+   ============================================ */
+
+/* Sección de tipos de grupos */
+.group-types-section {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.group-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.group-type-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.group-type-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.group-type-card.security {
+    border-left: 4px solid #10b981;
+}
+
+.group-type-card.security::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.group-type-card.distribution {
+    border-left: 4px solid #3b82f6;
+}
+
+.group-type-card.distribution::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.group-type-card.universal {
+    border-left: 4px solid #8b5cf6;
+}
+
+.group-type-card.universal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+}
+
+.group-type-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.group-type-card h3 {
+    color: var(--pwc-dark-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.group-type-card p {
+    color: var(--pwc-text);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.group-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.feature {
+    font-size: 0.9rem;
+    color: var(--pwc-text);
+    padding: 0.25rem 0;
+}
+
+/* Matriz de aprobaciones */
+.approval-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.approval-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.approval-item h4 {
+    color: var(--pwc-dark-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.approval-item p {
+    color: var(--pwc-text);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Convenciones de nomenclatura */
+.naming-conventions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.convention-item {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.convention-item h4 {
+    color: var(--pwc-dark-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.convention-item p {
+    margin: 0.25rem 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.convention-item code {
+    background: #e2e8f0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.example {
+    color: var(--pwc-text-light);
+    font-style: italic;
+    font-size: 0.85rem !important;
+}
+
+/* Grid de permisos */
+.permissions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.permission-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.permission-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.permission-item h4 {
+    color: var(--pwc-dark-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.permission-item p {
+    color: var(--pwc-text);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Checklist de documentación */
+.documentation-checklist {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    margin-top: 1rem;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+}
+
+.checklist-item:last-child {
+    margin-bottom: 0;
+}
+
+.checklist-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--pwc-light-blue);
+    cursor: default;
+}
+
+.checklist-item label {
+    color: var(--pwc-text);
+    font-size: 0.9rem;
+    cursor: default;
+    user-select: none;
+}
+
+/* Métricas específicas para grupos */
+.metrics-section .metric-card.primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+/* ============================================
+   INVENTARIO DE GRUPOS - ESTILOS ESPECÍFICOS
+   ============================================ */
+
+/* Pestañas de categorías */
+.group-inventory-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 1rem 2rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--pwc-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.tab-button:hover {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+.tab-button.active {
+    background: var(--pwc-orange);
+    color: white;
+    border-color: var(--pwc-orange);
+}
+
+/* Contenido de categorías */
+.group-category-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.group-category-content.active {
+    display: block;
+}
+
+/* Contenedor de tabla */
+.groups-table-container {
+    overflow-x: auto;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabla de grupos */
+.groups-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    min-width: 600px;
+}
+
+.groups-table th {
+    background: var(--pwc-dark-blue);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.groups-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+}
+
+.groups-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.groups-table code {
+    background: #f1f5f9;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--pwc-dark-blue);
+    font-weight: 600;
+}
+
+/* Botón de acción */
+.action-btn {
+    background: var(--pwc-orange);
+    color: white;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    min-width: 40px;
+}
+
+.action-btn:hover {
+    background: #e07400;
+    transform: scale(1.05);
+}
+
+/* Tags de aprobación */
+.approval-tag {
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.approval-tag.na {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.approval-tag.person {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* Estadísticas de grupos */
+.group-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    min-width: 120px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--pwc-orange);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--pwc-text);
+    font-weight: 500;
+}
+
+/* Contenedor de búsqueda */
+.search-container {
+    margin-top: 2rem;
+}
+
+#groupSearch {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#groupSearch:focus {
+    outline: none;
+    border-color: var(--pwc-light-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-results {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    color: var(--pwc-text);
+    font-weight: 500;
+    display: none;
+}
+
+.group-search-container {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.group-search-container input {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.group-search-container input:focus {
+    outline: none;
+    border-color: var(--pwc-orange);
+    box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.1);
+}
+
+/* Responsive para gestión de grupos */
+@media (max-width: 768px) {
+    .group-types-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .approval-matrix {
+        grid-template-columns: 1fr;
+    }
+    
+    .naming-conventions {
+        grid-template-columns: 1fr;
+    }
+    
+    .permissions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .group-type-card {
+        padding: 1rem;
+    }
+    
+    .group-type-icon {
+        font-size: 2rem;
+    }
+    
+    .group-inventory-tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .tab-button {
+        min-width: auto;
+        padding: 0.8rem 1rem;
+    }
+    
+    .groups-table-container {
+        margin: 1rem -1rem;
+        border-radius: 0;
+    }
+    
+    .groups-table th,
+    .groups-table td {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .group-stats {
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        min-width: 100px;
+        padding: 0.8rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .group-types-section {
+        padding: 1rem;
+    }
+    
+    .permissions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .convention-item p {
+        font-size: 0.8rem;
+    }
+    
+    .groups-table th,
+    .groups-table td {
+        padding: 0.6rem 0.3rem;
+        font-size: 0.9rem;
+    }
+    
+    .groups-table code {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .action-btn {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .group-search-container input {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animaciones específicas */
+.group-type-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.group-type-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.group-type-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.group-type-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para impresión específicos */
+@media print {
+    .group-types-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        page-break-inside: avoid;
+    }
+    
+    .group-type-card {
+        border: 1px solid #333;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+    
+    .approval-matrix {
+        grid-template-columns: 1fr;
+    }
+    
+    .permissions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Estilos para impresión */
+@media print {
+    .group-inventory-tabs {
+        display: none;
+    }
+    
+    .group-category-content {
+        display: block !important;
+        page-break-before: always;
+    }
+    
+    .group-category-content:first-child {
+        page-break-before: auto;
+    }
+    
+    .groups-table {
+        font-size: 0.7rem;
+    }
+    
+    .groups-table th,
+    .groups-table td {
+        padding: 0.3rem;
+    }
+    
+    .action-btn {
+        display: none;
+    }
+    
+    .search-container {
+        display: none;
+    }
+}
