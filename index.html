@@ -136,8 +136,8 @@ company, OUCreacion, OUFinal, mail, street, employeeType, fechaExpiracion, Reque
         </section>
 
         <section class="process-step">
-            <h2><span class="step-number">3.1</span>Asignación automática de licencias Office 365 E1 PLUS</h2>
-            <p>Para usuarios temporales y plantilla se asigna automáticamente la licencia Office 365 E1 PLUS:</p>
+            <h2><span class="step-number">3.1</span>Asignación manual de licencias Office 365 E1 PLUS</h2>
+            <p>Para usuarios temporales y plantilla se asigna manualmente la licencia Office 365 E1 PLUS:</p>
             
             <div class="validation-flow">
                 <div class="validation-step">
@@ -150,15 +150,13 @@ company, OUCreacion, OUFinal, mail, street, employeeType, fechaExpiracion, Reque
                 </div>
                 
                 <div class="office-license-box">
-                    <h3>📧 Asignación automática de Office 365 E1 PLUS</h3>
+                    <h3>📧 Asignación manual de Office 365 E1 PLUS</h3>
                     <p><strong>Condición:</strong> Si <code>employeeType = "Temporal"</code> OR <code>employeeType = "Plantilla"</code></p>
-                    <p><strong>Proceso automático:</strong> Se asigna inmediatamente:</p>
+                    <p><strong>Proceso manual:</strong> Se asigna manualmente:</p>
                     <ul>
-                        <li>✅ <strong>Licencia Office 365 E1 PLUS</strong> - Asignación automática</li>
-                        <li>✅ <strong>Correo electrónico corporativo</strong> (campo <code>mail</code>) - Habilitado</li>
-                        <li>✅ <strong>Buzón de correo Exchange Online</strong> - Configurado automáticamente</li>
-                        <li>✅ <strong>Microsoft Teams</strong> - Acceso habilitado</li>
-                        <li>✅ <strong>SharePoint Online</strong> - Acceso configurado</li>
+                        <li>📋 <strong>Licencia Office 365 E1 PLUS</strong> - Asignación manual</li>
+                        <li>📋 <strong>Correo electrónico corporativo</strong> (campo <code>mail</code>) - A configurar</li>
+                        <li>📋 <strong>Buzón de correo Exchange Online</strong> - A configurar manualmente</li>
                     </ul>
                 </div>
                 
@@ -168,12 +166,12 @@ company, OUCreacion, OUFinal, mail, street, employeeType, fechaExpiracion, Reque
                 </div>
                 
                 <div class="warning-box">
-                    <strong>⚠️ Proceso automatizado:</strong>
+                    <strong>⚠️ Proceso manual:</strong>
                     <ul>
                         <li>Se verifica que el campo <code>mail</code> esté correctamente formateado</li>
                         <li>Se valida disponibilidad de licencias Office 365 E1 PLUS en el tenant</li>
-                        <li>Se asigna automáticamente sin intervención manual</li>
-                        <li>Para usuarios temporales, se sincroniza la fecha de expiración con la licencia</li>
+                        <li>Se asigna manualmente según las necesidades del usuario</li>
+                        <li>Para usuarios temporales, se configura la fecha de expiración de la licencia</li>
                     </ul>
                 </div>
             </div>
@@ -279,16 +277,13 @@ company, OUCreacion, OUFinal, mail, street, employeeType, fechaExpiracion, Reque
             </ul>
             
             <div class="office-license-box">
-                <h3>📧 Asignación automática de licencias Office 365 E1 PLUS</h3>
+                <h3>📧 Configuración manual de licencias Office 365 E1 PLUS</h3>
                 <p><strong>Para usuarios temporales y de plantilla:</strong></p>
                 <ul>
-                    <li>✅ Se asigna automáticamente <strong>licencia Office 365 E1 PLUS</strong></li>
-                    <li>✅ Se habilita automáticamente el <strong>buzón de correo en Exchange Online</strong></li>
-                    <li>✅ Se configura acceso completo a <strong>Microsoft Teams</strong></li>
-                    <li>✅ Se habilita acceso a <strong>SharePoint Online</strong> y <strong>OneDrive for Business</strong></li>
-                    <li>✅ Se sincroniza la fecha de expiración de la licencia para usuarios temporales</li>
+                    <li>📋 Se asigna manualmente <strong>licencia Office 365 E1 PLUS</strong></li>
+                    <li>📋 Se configura manualmente el <strong>buzón de correo en Exchange Online</strong></li>
                 </ul>
-                <p><strong>Nota técnica:</strong> La asignación se realiza automáticamente mediante comandos PowerShell conectados a <code>Microsoft Graph</code> y <code>Exchange Online</code>.</p>
+                <p><strong>Nota técnica:</strong> La asignación se realiza manualmente posterior a la creación del usuario en AD, según las necesidades específicas del rol.</p>
             </div>
         </section>
 
